@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>🌸 Cipaa STEI-K 🌸</title>
+    
+    <!-- Google Fonts - Nunito -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="app-header">
+        <h1>🌸 Cipaa STEI-K 🌸</h1>
+    </header>
+
+    <!-- Visual Pane -->
+    <section id="visual-pane">
+        <div id="cipaa-world"></div>
+        <img id="ipul-sprite" src="https://images.pexels.com/photos/4520483/pexels-photo-4520483.jpeg" alt="Hamster Ipul">
+        <div id="dialog-box">
+            <p>Hai Cipaa! Aku Ipul~ Ayo belajar coding bareng-bareng! 🐹✨</p>
+        </div>
+    </section>
+
+    <!-- Code Editor Pane -->
+    <section id="code-section">
+        <div class="editor-header">
+            <h2>📝 Code Editor</h2>
+        </div>
+        <textarea id="code-editor" placeholder="Ketik kode kamu di sini..."></textarea>
+    </section>
+
+    <!-- Bottom Navigation Bar -->
+    <nav id="bottom-navbar">
+        <button id="home-button" class="nav-button active">🏠</button>
+        <button id="hint-button" class="nav-button">❓</button>
+        <button id="missions-button" class="nav-button">📋</button>
+    </nav>
+
+    <!-- Mission Modal -->
+    <div id="mission-modal" class="modal">
+        <div class="modal-content">
+            <h2>Misi-Misi Cipaa~</h2>
+            <ul id="mission-list">
+                <li>Misi 1: Buat rumah untuk Ipul</li>
+                <li>Misi 2: Warnai rumah dengan warna pink</li>
+                <li>Misi 3: Bikin sudut rumah jadi bulat</li>
+                <li>Misi 4: Tambah tombol ajaib</li>
+                <li>Misi 5: Bikin tombol bisa ganti warna rumah</li>
+            </ul>
+            <button id="close-modal">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

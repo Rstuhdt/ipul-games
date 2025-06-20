@@ -68,27 +68,35 @@ function updateDialog(message, isSuccess = false) {
 function validateMission(code) {
     switch(gameState.currentMission) {
         case 1:
-            if (/<div\s+id=["']ipul-house["']\s*>\s*<\/div>/i.test(code)) {
+            // More flexible regex for div with id="ipul-house" or id='ipul-house'
+            if (/<div[^>]*id\s*=\s*["']ipul-house["'][^>]*>[\s\S]*?<\/div>/i.test(code)) {
                 completeMission(1);
             }
             break;
         case 2:
-            if (/<style>[\s\S]*#ipul-house\s*{\s*background-color\s*:\s*.*pink.*}\s*<\/style>/i.test(code)) {
+            // Check for style tag with background-color containing pink
+            if (/<style[\s\S]*?<\/style>/i.test(code) && 
+                /#ipul-house[\s\S]*?{[\s\S]*?background-color[\s\S]*?pink/i.test(code)) {
                 completeMission(2);
             }
             break;
         case 3:
-            if (/<style>[\s\S]*#ipul-house\s*{[^}]*border-radius\s*:\s*\d+[px|%|rem|em]*/i.test(code)) {
+            // Check for border-radius in the CSS
+            if (/<style[\s\S]*?<\/style>/i.test(code) && 
+                /#ipul-house[\s\S]*?{[\s\S]*?border-radius[\s\S]*?:/i.test(code)) {
                 completeMission(3);
             }
             break;
         case 4:
-            if (/<button\s+id=["']magic-button["']/i.test(code)) {
+            // Check for button with id="magic-button" or id='magic-button'
+            if (/<button[^>]*id\s*=\s*["']magic-button["'][^>]*>/i.test(code)) {
                 completeMission(4);
             }
             break;
         case 5:
-            if (/<script>[\s\S]*addEventListener\s*\(\s*["']click["']\s*,[\s\S]*{[\s\S]*}[\s\S]*\)[\s\S]*<\/script>/i.test(code)) {
+            // Check for script tag with addEventListener and click
+            if (/<script[\s\S]*?<\/script>/i.test(code) && 
+                /addEventListener[\s\S]*?click/i.test(code)) {
                 completeMission(5);
             }
             break;

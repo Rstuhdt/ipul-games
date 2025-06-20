@@ -82,15 +82,23 @@ body {
     font-size: 24px;
 }
 
+/* Tutor Section Styles */
+#tutor-section {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 1rem;
+    position: relative;
+    min-height: 100px;
+}
+
 #ipul-sprite {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
     width: 60px;
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
     animation: bounce 2s infinite;
+    margin-right: 1rem;
 }
 
 @keyframes bounce {
@@ -99,15 +107,13 @@ body {
 }
 
 #dialog-box {
-    position: absolute;
-    bottom: 80px;
-    right: 20px;
     background: white;
     padding: 1rem;
     border-radius: 15px;
-    max-width: 200px;
+    max-width: 250px;
     box-shadow: 0 2px 4px var(--shadow-color);
     transition: all 0.3s ease;
+    position: relative;
 }
 
 #dialog-box.success {
@@ -163,10 +169,14 @@ body {
     content: '';
     position: absolute;
     bottom: -10px;
-    right: 20px;
+    left: 20px;
     border-width: 10px 10px 0;
     border-style: solid;
     border-color: white transparent transparent;
+}
+
+#dialog-box.success::after {
+    border-color: var(--pink-primary) transparent transparent;
 }
 
 /* Code Editor Styles */
